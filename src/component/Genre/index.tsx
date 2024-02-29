@@ -8,7 +8,7 @@ import { LoadingScreen } from "..";
 
 const Index = () => {
   const [genre, setGenre] = useState([]);
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   const getGenre = async () => {
     try {
@@ -20,7 +20,7 @@ const Index = () => {
   };
   useEffect(() => {
     getGenre();
-    setIsLoading(false)
+    setIsLoading(false);
   }, []);
 
   return (
@@ -52,8 +52,8 @@ const Index = () => {
               slidesPerView: 6,
             },
             1280: {
-              spaceBetween: 20,
-              slidesPerView: 9,
+              spaceBetween: 10,
+              slidesPerView: 7,
             },
           }}
           className="w-full mt-8"
@@ -62,7 +62,7 @@ const Index = () => {
             <SwiperSlide key={item.mal_id} className="flex w-fit m-0 justify-center items-center">
               <Link
                 to={`/searchByGenre?genre=${item.name}&type=${item.mal_id}`}
-                className="hover:font-semibold relative text-white py-2 mb-16 px-5 border-2 text-center border-slate-100 after:content-[''] hover:text-slate-800 after:h-0 after:block after:left-0 after:bottom-0 overflow-hidden hover:after:h-full after:absolute after:w-full after:bg-yellow-300 after:duration-300 after:ease-in-out after:-z-10"
+                className="hover:font-semibold relative flex-auto text-white py-2 mb-16 px-5 border-2 text-center border-slate-100 after:content-[''] hover:text-slate-800 after:h-0 after:block after:left-0 after:bottom-0 overflow-hidden hover:after:h-full after:absolute after:w-full after:bg-yellow-300 after:duration-300 after:ease-in-out after:-z-10"
               >
                 {item.name}
               </Link>
